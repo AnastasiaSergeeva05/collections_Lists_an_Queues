@@ -1,10 +1,17 @@
+
+import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Truck extends Transport implements Competition {
     private final TypeCapacity typeCapacity;
 
-    public Truck(String brand, String model, float engineVolume, TypeCapacity typeCapacity) {
-        super(brand, model, engineVolume);
+    public Truck(String brand,
+                 String model, float engineVolume,
+                 TypeCapacity typeCapacity,
+                 DriverD driverD,
+                 List<Mehanik> mehaniks,
+                 List<Sponsor> sponsors) {
+        super(brand, model, engineVolume,driverD, mehaniks, sponsors);
         this.typeCapacity = typeCapacity;
     }
 
@@ -22,10 +29,10 @@ public class Truck extends Transport implements Competition {
 
     @Override
     public void passDiagnostics() {
-        if (ThreadLocalRandom.current().nextBoolean()){
-            throw  new DiagnoistiksRun("Грузовик " +getBrand() + " " +getModel()+" не прошел ТО" );
+        if (ThreadLocalRandom.current().nextBoolean()) {
+            throw new DiagnoistiksRun("Грузовик " + getBrand() + " " + getModel() + " не прошел ТО");
         }
-     }
+    }
 
     @Override
     public void PitStop() {
@@ -33,13 +40,14 @@ public class Truck extends Transport implements Competition {
 
     }
 
-    public void infoType(){
-        if (this.typeCapacity != null){
+    public void infoType() {
+        if (this.typeCapacity != null) {
             System.out.println(this.typeCapacity);
-        }else {
+        } else {
             System.out.println(" нет данных");
         }
     }
+
     @Override
 
     public int getbestTime() {

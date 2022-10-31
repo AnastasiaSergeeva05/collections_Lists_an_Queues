@@ -14,7 +14,7 @@ public class Main {
         Bus buses = new Bus("Ауди", "A8 50 L TDI quattro", 2.5F, Capacity.SMALL);
         DriverD driverD = new DriverD("Алексей", 6, bus);
         try {
-             car.passDiagnostics();
+            car.passDiagnostics();
 
 
         } catch (DiagnoistiksRun e) {
@@ -32,7 +32,7 @@ public class Main {
             System.out.println("т.с " + e.getMessage() + " не прошло т.о ");
         }
 
-
+        car.infoPerson();
         car.PitStop();
         bus.PitStop();
         truck.PitStop();
