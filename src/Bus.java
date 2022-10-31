@@ -1,21 +1,30 @@
+
+import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Bus extends Transport implements Competition {
     private final Capacity capacity;
-    public Bus(String brand, String model, float engineVolume,Capacity capacity) {
 
-        super(brand, model, engineVolume);
+    public Bus(String brand,
+               String model, float engineVolume,
+               Capacity capacity,
+               DriverB driverB,
+               List<Mehanik> mehaniks,
+               List<Sponsor> sponsors) {
+
+        super(brand, model, engineVolume,  driverB, mehaniks, sponsors);
+
         this.capacity = capacity;
     }
 
     @Override
     public void startMove() {
-        System.out.printf("Автобус %s %s начинает двигаться",getBrand(),getModel());
+        System.out.printf("Автобус %s %s начинает двигаться", getBrand(), getModel());
     }
 
     @Override
     public void stopMove() {
-        System.out.printf("Автобус %s %s начинает двигаться",getBrand(), getModel());
+        System.out.printf("Автобус %s %s начинает двигаться", getBrand(), getModel());
 
     }
 
@@ -24,25 +33,26 @@ public class Bus extends Transport implements Competition {
         System.out.println("Автобус " + getModel() + getBrand() + " не нужно ТО");
     }
 
-    public void infoType(){
-        if (this.capacity != null){
+    public void infoType() {
+        if (this.capacity != null) {
             System.out.println(capacity);
-        }else {
+        } else {
             System.out.println("нет данных");
         }
-}
+    }
+
     @Override
     public void PitStop() {
-        System.out.printf("Автобус %s %s в ПитСтопе \n",getBrand(),getModel());
+        System.out.printf("Автобус %s %s в ПитСтопе \n", getBrand(), getModel());
     }
 
     @Override
     public int getbestTime() {
-        return ThreadLocalRandom.current().nextInt(1,1500);
+        return ThreadLocalRandom.current().nextInt(1, 1500);
     }
 
     @Override
     public int getMaxSpeed() {
-        return ThreadLocalRandom.current().nextInt(1,200);
+        return ThreadLocalRandom.current().nextInt(1, 200);
     }
 }

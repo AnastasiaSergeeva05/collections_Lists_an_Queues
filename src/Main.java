@@ -32,7 +32,7 @@ public class Main {
             System.out.println("т.с " + e.getMessage() + " не прошло т.о ");
         }
 
-
+car.infoPerson();
         car.PitStop();
         bus.PitStop();
         truck.PitStop();
