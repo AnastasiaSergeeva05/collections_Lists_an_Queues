@@ -44,4 +44,15 @@ public class Mehanik {
     public boolean isFixesTruck() {
         return fixesTruck;
     }
+
+    @Override
+    public String toString() {
+        return "Mehanik{" +
+                "fullName='" + fullName + '\'' +
+                ", company='" + company + '\'' +
+                ", fixesCars=" + fixesCars +
+                ", fixesBus=" + fixesBus +
+                ", fixesTruck=" + fixesTruck +
+                '}';
+    }
 }

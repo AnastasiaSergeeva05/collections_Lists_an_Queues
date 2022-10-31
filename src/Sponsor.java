@@ -20,4 +20,13 @@ public class Sponsor {
     public boolean isPhysical() {
         return physical;
     }
+
+    @Override
+    public String toString() {
+        return "Sponsor{" +
+                "name='" + name + '\'' +
+                ", sponsorSum=" + sponsorSum +
+                ", physical=" + physical +
+                '}';
+    }
 }
