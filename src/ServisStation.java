@@ -18,7 +18,7 @@ public class ServisStation {
     public void service(){
         Transport next = serviceQueue.poll();
         if (next != null ){
-            System.out.println("Сервис" + next.getModel() + " " + next.getBrand());
+            System.out.println("Сервис" + next.getModel() + " " + next.getBrand()) ;
         }
     }
 }
